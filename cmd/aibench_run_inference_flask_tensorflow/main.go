@@ -140,7 +140,7 @@ func (p *Processor) ProcessInferenceQuery(q []byte, isWarm bool, workerNum int, 
 	transPart.Write(transactionValues)
 	start := time.Now()
 	if useReferenceDataRedis {
-		redisRespReferenceBytes, redisErr := redisClient.Get(referenceDataKeyName).Bytes()
+		redisRespReferenceBytes, redisErr := redisClient.Get(redisClient.Context(), referenceDataKeyName).Bytes()
 		if redisErr != nil {
 			log.Fatalln("Error on redisClient.Get", redisErr)
 		}

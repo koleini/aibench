@@ -45,4 +45,3 @@ NUM_WORKERS=${NUM_WORKERS:-$(grep -c ^processor /proc/cpuinfo 2>/dev/null || ech
 # How many INFERENCES to Generate/Run
 NUM_INFERENCES=${NUM_INFERENCES:-1000000}
 
-set -x
